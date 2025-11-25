@@ -83,28 +83,31 @@ npm run preview
 
 ### デプロイ手順
 
-1. GitHubリポジトリの設定を開く
+1. **GitHubリポジトリの設定**
    - リポジトリの **Settings** → **Pages** に移動
+   - **Source** を **GitHub Actions** に設定（重要！）
+   - これにより、`.github/workflows/deploy.yml` のワークフローが使用されます
 
-2. Sourceを設定
-   - **Source** を **GitHub Actions** に設定
+2. **コードをプッシュ**
+   ```bash
+   git add .
+   git commit -m "Add GitHub Pages deployment"
+   git push origin main
+   ```
 
-3. コードをプッシュ
-   - `main`ブランチにプッシュすると、自動的にビルドとデプロイが実行されます
-
-4. デプロイの確認
-   - Actionsタブでデプロイの進行状況を確認できます
+3. **デプロイの確認**
+   - GitHubリポジトリの **Actions** タブでデプロイの進行状況を確認
+   - ワークフローが成功すると、自動的にGitHub Pagesにデプロイされます
    - デプロイが完了すると、`https://m-okumura.github.io/my-portfolio/` でアクセスできます
 
-### 手動デプロイ（オプション）
+### トラブルシューティング
 
-```bash
-# ビルド
-npm run build
-
-# distフォルダの内容をgh-pagesブランチにデプロイ
-# （gh-pagesパッケージを使用する場合）
-```
+- デプロイが失敗する場合：
+  - Actionsタブでエラーログを確認
+  - `vite.config.ts` の `base` パスがリポジトリ名と一致しているか確認（現在は `/my-portfolio/`）
+  
+- リポジトリ名が異なる場合：
+  - `vite.config.ts` の `base: '/my-portfolio/'` を実際のリポジトリ名に変更してください
 
 ## ライセンス
 

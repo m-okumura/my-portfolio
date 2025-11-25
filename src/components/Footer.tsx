@@ -12,8 +12,8 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="mb-3 text-lg">
-            © {new Date().getFullYear()} My Portfolio. All rights reserved.
-          </p>
+          © {new Date().getFullYear()} My Portfolio. All rights reserved.
+        </p>
           <motion.p
             className="text-sm text-gray-400 flex items-center justify-center gap-2"
             initial={{ opacity: 0 }}

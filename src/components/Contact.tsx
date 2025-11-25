@@ -17,10 +17,10 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
-        >
+      >
           <h2 className="text-4xl md:text-6xl font-black mb-4">
             <span className="gradient-text">お問い合わせ</span>
-          </h2>
+        </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </motion.div>
 
