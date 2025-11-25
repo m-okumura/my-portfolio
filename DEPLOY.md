@@ -1,134 +1,65 @@
-# GitHub Pagesへのデプロイ手順
+# 自動デプロイ設定ガイド
 
-このドキュメントでは、プロジェクトをGitHub Pagesにデプロイする方法を説明します。
+このポートフォリオサイトをVercelに自動デプロイする方法です。
 
-## 🚀 デプロイコマンド
+## 方法1: Vercel GitHub統合（推奨・最も簡単）
 
-以下のコマンドを実行するだけで、自動的にビルドとデプロイが行われます：
+1. [Vercel](https://vercel.com)にアクセスしてアカウントを作成（GitHubアカウントでログイン推奨）
 
-```bash
-npm run deploy
-```
+2. Vercelダッシュボードで「Add New Project」をクリック
 
-このコマンドは以下を実行します：
-1. TypeScriptのコンパイル
-2. Viteでのビルド
-3. `gh-pages`ブランチへの自動デプロイ
+3. GitHubリポジトリ `m-okumura/my-portfolio` を選択
 
-## 📝 初回デプロイの準備
+4. プロジェクト設定：
+   - Framework Preset: `Vite`
+   - Build Command: `npm run build`（自動検出されるはず）
+   - Output Directory: `dist`（自動検出されるはず）
+   - Install Command: `npm install`（自動検出されるはず）
 
-### 1. 変更をコミット
+5. 「Deploy」をクリック
 
-まず、変更をGitにコミットします：
+これで、`main`ブランチにプッシュするたびに自動的にデプロイされます。
 
-```bash
-git add .
-git commit -m "Add GitHub Pages deployment configuration"
-git push origin main
-```
+## 方法2: GitHub Actionsを使用（既に設定済み）
 
-### 2. GitHub Pagesの設定
+GitHub Actionsワークフローが既に設定されています。以下の手順でシークレットを設定してください：
 
-1. GitHubのリポジトリページにアクセス: https://github.com/m-okumura/my-portfolio
-2. 「Settings」タブをクリック
-3. 左サイドバーの「Pages」をクリック
-4. 「Source」で「Deploy from a branch」を選択
-5. 「Branch」で「gh-pages」ブランチと「/(root)」を選択
-6. 「Save」をクリック
+1. GitHubリポジトリの「Settings」→「Secrets and variables」→「Actions」に移動
 
-### 3. デプロイ実行
+2. 以下のシークレットを追加：
 
-```bash
-npm run deploy
-```
+   ### VERCEL_TOKEN
+   - Vercelダッシュボード → Settings → Tokens
+   - 新しいトークンを作成してコピー
 
-## 🌐 公開URL
+   ### VERCEL_ORG_ID
+   - Vercel CLIで `vercel link` を実行するか
+   - Vercel APIで取得: `curl https://api.vercel.com/v1/teams -H "Authorization: Bearer YOUR_TOKEN"`
 
-デプロイが完了すると、以下のURLでアクセスできます：
+   ### VERCEL_PROJECT_ID
+   - プロジェクトを作成後、プロジェクト設定ページのURLから取得
+   - または `vercel link` で `.vercel/project.json` に保存される
 
-- **メインサイト**: https://m-okumura.github.io/my-portfolio/
-- **HP（AIXWEB）**: https://m-okumura.github.io/my-portfolio/hp/
+3. `main`ブランチにプッシュすると自動的にデプロイされます
 
-## 🔄 更新方法
-
-サイトを更新する場合は、以下の手順を実行します：
+## 方法3: Vercel CLIを使用
 
 ```bash
-# 1. 変更を行う
-# 2. 変更をコミット
-git add .
-git commit -m "Update site"
-git push origin main
+# Vercel CLIをインストール
+npm i -g vercel
 
-# 3. デプロイ
-npm run deploy
+# ログイン
+vercel login
+
+# プロジェクトをリンク
+vercel link
+
+# デプロイ
+vercel --prod
 ```
 
-## 📂 デプロイされるファイル
+## デプロイ後の確認
 
-- `dist/` フォルダの内容が `gh-pages` ブランチにデプロイされます
-- `.nojekyll` ファイルも含まれ、Jekyllの処理をスキップします
+デプロイが完了すると、VercelからURLが提供されます（例: `https://my-portfolio-xxx.vercel.app`）
 
-## ⚙️ 設定ファイル
-
-### vite.config.ts
-```typescript
-base: '/my-portfolio/'
-```
-
-この設定により、すべてのアセットパスが正しく解決されます。
-
-### package.json
-```json
-{
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
-}
-```
-
-## 🐛 トラブルシューティング
-
-### デプロイが失敗する場合
-
-1. **ビルドエラー**: まず `npm run build` を実行して、ビルドが成功するか確認
-2. **権限エラー**: GitHubへのpush権限を確認
-3. **ブランチエラー**: `gh-pages` ブランチが正しく作成されているか確認
-
-### ページが表示されない場合
-
-1. GitHub Pagesの設定が正しいか確認
-2. 数分待ってから再度アクセス（デプロイには時間がかかる場合があります）
-3. ブラウザのキャッシュをクリア
-
-### アセットが読み込まれない場合
-
-1. `vite.config.ts` の `base` 設定を確認
-2. コンソールでパスエラーを確認
-
-## 📱 ローカルプレビュー
-
-デプロイ前にローカルでビルド結果を確認できます：
-
-```bash
-# ビルド
-npm run build
-
-# プレビュー
-npm run preview
-```
-
-## 🎯 HPサイト（AIXWEB）のみをビルド
-
-AIXWEBサイトのみをビルドする場合：
-
-```bash
-cd hp
-npm run build
-```
-
----
-
-**注意**: 初回デプロイ後、GitHubが `gh-pages` ブランチを認識するまで数分かかる場合があります。
-
+カスタムドメインも設定可能です。
