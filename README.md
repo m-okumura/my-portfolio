@@ -68,28 +68,6 @@ npm run preview
 
 `tailwind.config.js` の `primary` カラーを変更することで、サイト全体のカラーテーマを変更できます。
 
-## デプロイ
-
-### Vercelへの自動デプロイ（推奨）
-
-1. [Vercel](https://vercel.com)にアクセスしてアカウントを作成（GitHubアカウントでログイン推奨）
-
-2. Vercelダッシュボードで「Add New Project」をクリック
-
-3. GitHubリポジトリ `m-okumura/my-portfolio` を選択
-
-4. プロジェクト設定（自動検出されるはず）：
-   - Framework Preset: `Vite`
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-   - Install Command: `npm install`
-
-5. 「Deploy」をクリック
-
-これで、`main`ブランチにプッシュするたびに自動的にデプロイされます。
-
-詳細は [DEPLOY.md](./DEPLOY.md) を参照してください。
-
 ## 技術スタック
 
 - **React 18** - UIライブラリ
@@ -98,6 +76,35 @@ npm run preview
 - **Tailwind CSS** - スタイリング
 - **Framer Motion** - アニメーション
 - **Lucide React** - アイコン
+
+## GitHub Pagesへのデプロイ
+
+このプロジェクトはGitHub Actionsを使用して自動的にGitHub Pagesにデプロイされます。
+
+### デプロイ手順
+
+1. GitHubリポジトリの設定を開く
+   - リポジトリの **Settings** → **Pages** に移動
+
+2. Sourceを設定
+   - **Source** を **GitHub Actions** に設定
+
+3. コードをプッシュ
+   - `main`ブランチにプッシュすると、自動的にビルドとデプロイが実行されます
+
+4. デプロイの確認
+   - Actionsタブでデプロイの進行状況を確認できます
+   - デプロイが完了すると、`https://m-okumura.github.io/my-portfolio/` でアクセスできます
+
+### 手動デプロイ（オプション）
+
+```bash
+# ビルド
+npm run build
+
+# distフォルダの内容をgh-pagesブランチにデプロイ
+# （gh-pagesパッケージを使用する場合）
+```
 
 ## ライセンス
 
