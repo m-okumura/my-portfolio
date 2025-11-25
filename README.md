@@ -68,6 +68,28 @@ npm run preview
 
 `tailwind.config.js` の `primary` カラーを変更することで、サイト全体のカラーテーマを変更できます。
 
+## デプロイ
+
+### Vercelへの自動デプロイ（推奨）
+
+1. [Vercel](https://vercel.com)にアクセスしてアカウントを作成（GitHubアカウントでログイン推奨）
+
+2. Vercelダッシュボードで「Add New Project」をクリック
+
+3. GitHubリポジトリ `m-okumura/my-portfolio` を選択
+
+4. プロジェクト設定（自動検出されるはず）：
+   - Framework Preset: `Vite`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Install Command: `npm install`
+
+5. 「Deploy」をクリック
+
+これで、`main`ブランチにプッシュするたびに自動的にデプロイされます。
+
+詳細は [DEPLOY.md](./DEPLOY.md) を参照してください。
+
 ## 技術スタック
 
 - **React 18** - UIライブラリ
