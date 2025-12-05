@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // GitHub Pages用のbaseパス（リポジトリ名に合わせて変更してください）
-  base: '/my-portfolio/',
+  // VercelやNetlifyで公開する場合は '/' に設定
+  // GitHub Pagesで公開する場合は '/my-portfolio/' に変更してください
+  base: '/',
 })
 

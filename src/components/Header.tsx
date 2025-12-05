@@ -10,10 +10,10 @@ const Header = ({ isScrolled }: HeaderProps) => {
 
   const navItems = [
     { name: 'ホーム', href: '#home' },
-    { name: 'About', href: '#about' },
+    { name: 'プロフィール', href: '#about' },
     { name: 'スキル', href: '#skills' },
-    { name: 'プロジェクト', href: '#projects' },
-    { name: 'お問い合わせ', href: '#contact' },
+    { name: '職歴', href: '#career' },
+    { name: '趣味', href: '#hobbies' },
   ]
 
   return (
@@ -22,28 +22,19 @@ const Header = ({ isScrolled }: HeaderProps) => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass shadow-lg shadow-cyan-500/20'
+          ? 'bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm'
           : 'bg-transparent'
       }`}
     >
       <nav className="section-container py-4">
         <div className="flex items-center justify-between">
-          <motion.a
-            href="#home"
-            className="text-2xl font-black gradient-text"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Portfolio
-          </motion.a>
-
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-6 ml-auto">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="relative text-gray-300 hover:text-cyan-400 transition-colors font-medium px-4 py-2 rounded-full hover:bg-white/5"
+                className="relative text-gray-600 hover:text-gray-900 transition-colors font-medium px-4 py-2 rounded-full hover:bg-gray-100"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -52,7 +43,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
               >
                 {item.name}
                 <motion.span
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-400"
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
@@ -63,7 +54,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden text-cyan-400 p-2 rounded-full hover:bg-white/10 transition-colors"
+            className="md:hidden text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="メニュー"
             whileHover={{ scale: 1.1 }}
@@ -93,13 +84,13 @@ const Header = ({ isScrolled }: HeaderProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4 glass rounded-2xl p-4"
+            className="md:hidden mt-4 pb-4 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-lg"
           >
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="block py-3 px-4 text-gray-300 hover:text-cyan-400 hover:bg-white/5 rounded-full transition-all font-medium"
+                className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all font-medium"
                 onClick={() => setIsMenuOpen(false)}
                 whileHover={{ x: 5 }}
               >
