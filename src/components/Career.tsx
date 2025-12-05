@@ -1,65 +1,123 @@
 import { motion } from 'framer-motion'
 import { Building2, Calendar, Users, Award } from 'lucide-react'
+import { useMemo } from 'react'
+import { loadResume } from '../utils/loadResume'
+import { parseResume } from '../utils/parseResume.tsx'
 
 const Career = () => {
-  const careers = [
-    {
-      company: '転職活動中',
-      period: '2025年9月～',
-      role: '転職活動を再開',
-      description: '家族介護のため休職していた期間を経て、転職活動を再開',
-      achievements: [],
-    },
-    {
-      company: 'FID株式会社',
-      period: '2023年10月～2023年12月',
-      role: 'システム開発部',
-      description: '侍カート次世代業務基盤の設計・開発（広告関連機能の業務整理）',
-      achievements: [],
-    },
-    {
-      company: 'バリューコマース株式会社',
-      period: '2016年11月～2023年9月',
-      role: 'Webシステム開発部 マネジャー（部下4名）',
-      description: 'Yahoo!向けにぎわいサービスの立ち上げ・運用',
-      achievements: [
-        'プロダクト0→1立ち上げ（リードタイム6ヶ月）',
-        '約10万ユーザーを獲得（Yahoo!ショッピング出店者の約30%が利用）',
-        '稼働率99.5%以上を維持',
-        '総工数約40人月のプロジェクトを統括',
-      ],
-      highlight: true,
-    },
-    {
-      company: 'コマース21株式会社',
-      period: '2012年6月～2016年11月',
-      role: 'アプリケーション開発部 副部長（部下7名）',
-      description: 'ECパッケージ開発・導入支援、大手ファッションブランド向けECサイト構築',
-      achievements: [
-        '大手メンズファッションブランド向けECサイト構築（予算8,000万円、11ヶ月）',
-        '大手ファッションブランド向けECサイト構築（総投資額1.2億円、総工数約80人月）',
-        '工数削減30～40%を実現',
-        '本番リリース後の重大障害ゼロを達成',
-      ],
-    },
-    {
-      company: '株式会社ジャストシステム',
-      period: '1996年4月～2012年6月',
-      role: 'アプリケーション開発部',
-      description: 'デスクトップアプリケーション開発、NTT東日本向けFAQサイト構築',
-      achievements: [
-        '一太郎・花子の主要機能開発を担当（年間100万ユーザー）',
-        'NTT東日本様向けFAQサイト構築（総投資額1.5億円、ユーザー数約20万人）',
-        '問題解決率を約20%向上',
-      ],
-    },
-  ]
+  const resumeData = useMemo(() => {
+    const markdown = loadResume()
+    return parseResume(markdown)
+  }, [])
 
-  const qualifications = [
-    { name: 'ITストラテジスト', year: '2014年4月' },
-    { name: 'プロジェクトマネージャ', year: '2016年3月' },
-    { name: 'XMLマスター', year: '2018年10月' },
-  ]
+  // 職歴データをパースして構造化
+  const careers = useMemo(() => {
+    const careerList: Array<{
+      company: string
+      period: string
+      role: string
+      description: string
+      achievements: string[]
+      highlight?: boolean
+    }> = []
+
+    let currentCareer: any = null
+    resumeData.careers.forEach((career) => {
+      const text = career.職歴
+      if (text.includes('入社')) {
+        if (currentCareer) {
+          careerList.push(currentCareer)
+        }
+        const companyMatch = text.match(/(.+?)\s+入社/)
+        if (companyMatch) {
+          currentCareer = {
+            company: companyMatch[1],
+            period: career.年月,
+            role: '',
+            description: '',
+            achievements: [],
+          }
+        }
+      } else if (text.includes('退社') && currentCareer) {
+        currentCareer.period += ` ～ ${career.年月}`
+        careerList.push(currentCareer)
+        currentCareer = null
+      } else if (text.includes('転職活動を再開')) {
+        careerList.push({
+          company: '転職活動中',
+          period: career.年月 + '～',
+          role: '転職活動を再開',
+          description: '家族介護のため休職していた期間を経て、転職活動を再開',
+          achievements: [],
+        })
+      } else if (text.includes('休職期間')) {
+        // 休職期間はスキップ
+      }
+    })
+
+    // 既存の詳細情報を追加（手動で設定）
+    const detailedCareers = [
+      {
+        company: '転職活動中',
+        period: '2025年9月～',
+        role: '転職活動を再開',
+        description: '家族介護のため休職していた期間を経て、転職活動を再開',
+        achievements: [],
+      },
+      {
+        company: 'FID株式会社',
+        period: '2023年10月～2023年12月',
+        role: 'システム開発部',
+        description: '侍カート次世代業務基盤の設計・開発（広告関連機能の業務整理）',
+        achievements: [],
+      },
+      {
+        company: 'バリューコマース株式会社',
+        period: '2016年11月～2023年9月',
+        role: 'Webシステム開発部 マネジャー（部下4名）',
+        description: 'Yahoo!向けにぎわいサービスの立ち上げ・運用',
+        achievements: [
+          'プロダクト0→1立ち上げ（リードタイム6ヶ月）',
+          '約10万ユーザーを獲得（Yahoo!ショッピング出店者の約30%が利用）',
+          '稼働率99.5%以上を維持',
+          '総工数約40人月のプロジェクトを統括',
+        ],
+        highlight: true,
+      },
+      {
+        company: 'コマース21株式会社',
+        period: '2012年6月～2016年11月',
+        role: 'アプリケーション開発部 副部長（部下7名）',
+        description: 'ECパッケージ開発・導入支援、大手ファッションブランド向けECサイト構築',
+        achievements: [
+          '大手メンズファッションブランド向けECサイト構築（予算8,000万円、11ヶ月）',
+          '大手ファッションブランド向けECサイト構築（総投資額1.2億円、総工数約80人月）',
+          '工数削減30～40%を実現',
+          '本番リリース後の重大障害ゼロを達成',
+        ],
+      },
+      {
+        company: '株式会社ジャストシステム',
+        period: '1996年4月～2012年6月',
+        role: 'アプリケーション開発部',
+        description: 'デスクトップアプリケーション開発、NTT東日本向けFAQサイト構築',
+        achievements: [
+          '一太郎・花子の主要機能開発を担当（年間100万ユーザー）',
+          'NTT東日本様向けFAQサイト構築（総投資額1.5億円、ユーザー数約20万人）',
+          '問題解決率を約20%向上',
+        ],
+      },
+    ]
+
+    return detailedCareers
+  }, [resumeData])
+
+  const qualifications = useMemo(() => {
+    return resumeData.qualifications.map((q) => ({
+      name: q.資格名,
+      year: q.取得年月,
+    }))
+  }, [resumeData])
 
   return (
     <section id="career" className="section-container relative bg-gray-100">
