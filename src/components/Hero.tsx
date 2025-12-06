@@ -9,33 +9,33 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(107,114,128,0.08),transparent_50%)]"></div>
 
-      {/* Profile Photo - Top Right */}
-      <motion.div
-        className="absolute top-8 right-4 md:top-16 md:right-8 lg:right-16 z-20"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-      >
-        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-4 border-gray-400 shadow-lg bg-gray-50 max-w-[calc(100vw-2rem)]">
-          <img
-            src={profilePhoto}
-            alt="奧村 宗久"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </motion.div>
-
       <div className="section-container text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Profile Photo - Center */}
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <div className="w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] rounded-full overflow-hidden border-4 border-gray-400 shadow-xl bg-gray-50">
+              <img
+                src={profilePhoto}
+                alt="奧村 宗久"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+
           <motion.h1
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.3 }}
           >
             <span className="text-gray-900">奧村 宗久</span>
           </motion.h1>
