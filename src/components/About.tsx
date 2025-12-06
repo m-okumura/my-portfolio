@@ -15,7 +15,7 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-5xl mx-auto"
+        className="max-w-5xl mx-auto w-full px-4 sm:px-0"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-full overflow-hidden box-border"
           >
             <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 pb-3 sm:pb-4 border-b-2 border-gray-200">
               <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center shadow-md">
@@ -48,26 +48,26 @@ const About = () => {
               </h3>
             </div>
             <div className="space-y-4 sm:space-y-6">
-              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation">
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation w-full overflow-hidden">
                 <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                  <span className="text-xl sm:text-2xl">👤</span>
+                  <span className="text-xl sm:text-2xl flex-shrink-0">👤</span>
                   <span className="text-gray-600 text-sm sm:text-base font-semibold">氏名</span>
                 </div>
-                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10">{resumeData.basicInfo.氏名}</p>
+                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10 break-words overflow-wrap-anywhere">{resumeData.basicInfo.氏名}</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation">
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation w-full overflow-hidden">
                 <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                  <span className="text-xl sm:text-2xl">📅</span>
+                  <span className="text-xl sm:text-2xl flex-shrink-0">📅</span>
                   <span className="text-gray-600 text-sm sm:text-base font-semibold">生年月日</span>
                 </div>
-                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10">{resumeData.basicInfo.生年月日}</p>
+                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10 break-words overflow-wrap-anywhere">{resumeData.basicInfo.生年月日}</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation">
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation w-full overflow-hidden">
                 <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                  <span className="text-xl sm:text-2xl">📧</span>
+                  <span className="text-xl sm:text-2xl flex-shrink-0">📧</span>
                   <span className="text-gray-600 text-sm sm:text-base font-semibold">連絡先</span>
                 </div>
-                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10 break-words">{resumeData.basicInfo.連絡先}</p>
+                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10 break-words overflow-wrap-anywhere break-all">{resumeData.basicInfo.連絡先}</p>
               </div>
             </div>
           </motion.div>
@@ -78,7 +78,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-full overflow-hidden box-border"
           >
             <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 pb-3 sm:pb-4 border-b-2 border-gray-200">
               <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center shadow-md">
@@ -92,13 +92,13 @@ const About = () => {
               {resumeData.education.map((edu, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation"
+                  className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation w-full overflow-hidden"
                 >
                   <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                    <span className="text-xl sm:text-2xl">📅</span>
+                    <span className="text-xl sm:text-2xl flex-shrink-0">📅</span>
                     <span className="text-gray-600 text-sm sm:text-base font-semibold">{edu.年月}</span>
                   </div>
-                  <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10">{edu.学歴}</p>
+                  <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10 break-words overflow-wrap-anywhere">{edu.学歴}</p>
                 </div>
               ))}
             </div>
