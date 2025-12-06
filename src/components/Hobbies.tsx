@@ -110,20 +110,38 @@ const Hobbies = () => {
                 <p className="text-gray-600 leading-relaxed mb-4">{hobby.description}</p>
                 {hobby.github && (
                   <div className="mt-4">
-                    <p className="text-sm font-semibold text-gray-700 mb-2">📁 GitHubで公開中</p>
+                    <p className="text-sm font-semibold text-gray-700 mb-2">週末コーディングで作ったもの：</p>
                     <div className="space-y-2">
-                      {hobby.github.map((repo) => (
-                        <a
-                          key={repo.name}
-                          href={repo.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          <span>{repo.name}</span>
-                        </a>
-                      ))}
+                      <a
+                        href="https://github.com/m-okumura/weather-app.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span>🌦️ 天気アプリ</span>
+                        <span className="text-gray-500 text-xs ml-2">→ TypeScript + React で作成</span>
+                      </a>
+                      <a
+                        href="https://github.com/m-okumura/my-portfolio.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span>📁 ポートフォリオ</span>
+                        <span className="text-gray-500 text-xs ml-2">→ このサイトのソースコード</span>
+                      </a>
+                      <a
+                        href="https://github.com/m-okumura/reactstudy.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span>📚 React学習用</span>
+                        <span className="text-gray-500 text-xs ml-2">→ 学習の記録</span>
+                      </a>
                     </div>
                   </div>
                 )}
