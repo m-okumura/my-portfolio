@@ -6,6 +6,7 @@ import Skills from './components/Skills'
 import Career from './components/Career'
 import Hobbies from './components/Hobbies'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import { initScrollAnimation } from './utils/scrollAnimation'
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Hobbies />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
