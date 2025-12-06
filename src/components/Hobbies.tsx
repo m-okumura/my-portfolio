@@ -44,7 +44,7 @@ const Hobbies = () => {
   ]
 
   return (
-    <section id="hobbies" className="section-container relative bg-gray-100">
+    <section id="hobbies" className="section-container relative" style={{ backgroundColor: '#f0fff0' }}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

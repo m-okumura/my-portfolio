@@ -3,10 +3,7 @@ import profilePhoto from '../assets/okumuram.jpeg'
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-x-hidden">
-      {/* Subtle Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(107,114,128,0.08),transparent_50%)]"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-x-hidden bg-white">
 
       <div className="section-container text-center relative z-10">
         <motion.div
