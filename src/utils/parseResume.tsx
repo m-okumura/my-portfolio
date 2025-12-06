@@ -173,13 +173,14 @@ export function parseResume(markdown: string): ResumeData {
 
   // 最後のセクションの処理
   if (motivationLines.length > 0) {
-    data.motivation = motivationLines.join('\n')
+    data.motivation = motivationLines.join('\n').trim()
   }
   if (selfPRLines.length > 0) {
-    data.selfPR = selfPRLines.join('\n')
+    // 改行を正しく処理し、空行を削除
+    data.selfPR = selfPRLines.join('\n').trim()
   }
   if (hobbiesLines.length > 0) {
-    data.hobbies = hobbiesLines.join('\n')
+    data.hobbies = hobbiesLines.join('\n').trim()
   }
 
   return data as ResumeData
@@ -187,15 +188,26 @@ export function parseResume(markdown: string): ResumeData {
 
 // Markdownコンポーネント用の設定
 export const markdownComponents: any = {
-  p: ({ children }: { children?: ReactNode }) => <p className="mb-3 text-gray-600 leading-relaxed">{children}</p>,
+  p: ({ children }: { children?: ReactNode }) => {
+    // childrenが配列の場合、各要素を処理
+    if (Array.isArray(children)) {
+      return <p className="mb-3 text-gray-600 leading-relaxed">{children}</p>
+    }
+    return <p className="mb-3 text-gray-600 leading-relaxed">{children}</p>
+  },
   h3: ({ children }: { children?: ReactNode }) => <h3 className="text-lg font-semibold text-gray-700 mb-3">{children}</h3>,
   h4: ({ children }: { children?: ReactNode }) => <h4 className="text-lg font-semibold text-gray-700 mb-3">{children}</h4>,
   strong: ({ children }: { children?: ReactNode }) => <strong className="text-gray-800 font-semibold">{children}</strong>,
   em: ({ children }: { children?: ReactNode }) => <em className="text-gray-800">{children}</em>,
   ul: ({ children }: { children?: ReactNode }) => <ul className="list-disc list-inside space-y-2 text-gray-600">{children}</ul>,
   li: ({ children }: { children?: ReactNode }) => <li className="text-gray-600">{children}</li>,
-  // textコンポーネントを追加して、インライン要素を正しく処理
-  text: ({ children }: { children?: ReactNode }) => <>{children}</>,
+}
+
+// Markdownテキストの前処理関数（**を正しく処理）
+export function preprocessMarkdown(text: string): string {
+  // 改行を正規化し、**が正しくパースされるようにする
+  // 連続する改行を1つに統一
+  return text.replace(/\n{3,}/g, '\n\n').trim()
 }
 
 export { ReactMarkdown, remarkGfm, rehypeRaw }
