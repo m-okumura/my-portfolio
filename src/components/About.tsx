@@ -30,59 +30,59 @@ const About = () => {
           <div className="w-24 h-0.5 bg-gray-300 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start mb-12">
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
           {/* 基本情報カード */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-50 rounded-2xl p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-shadow"
+            className="bg-white rounded-2xl p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gray-200 flex items-center justify-center">
-                <span className="text-2xl">👤</span>
+            <div className="flex items-center gap-3 mb-8 pb-4 border-b-2 border-gray-200">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center shadow-md">
+                <span className="text-3xl">👤</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
                 基本情報
               </h3>
             </div>
             <div className="space-y-6">
-              <div className="pb-4 border-b border-gray-200">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">👤</span>
-                  <span className="text-gray-500 text-base font-medium">氏名</span>
+              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:bg-gray-100 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">👤</span>
+                  <span className="text-gray-600 text-base font-semibold">氏名</span>
                 </div>
-                <p className="text-gray-800 font-semibold text-lg ml-7">{resumeData.basicInfo.氏名}</p>
+                <p className="text-gray-900 font-bold text-xl ml-10">{resumeData.basicInfo.氏名}</p>
               </div>
-              <div className="pb-4 border-b border-gray-200">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">📅</span>
-                  <span className="text-gray-500 text-base font-medium">生年月日</span>
+              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:bg-gray-100 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">📅</span>
+                  <span className="text-gray-600 text-base font-semibold">生年月日</span>
                 </div>
-                <p className="text-gray-800 font-semibold text-lg ml-7">{resumeData.basicInfo.生年月日}</p>
+                <p className="text-gray-900 font-bold text-xl ml-10">{resumeData.basicInfo.生年月日}</p>
               </div>
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">📧</span>
-                  <span className="text-gray-500 text-base font-medium">連絡先</span>
+              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:bg-gray-100 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">📧</span>
+                  <span className="text-gray-600 text-base font-semibold">連絡先</span>
                 </div>
-                <p className="text-gray-800 font-semibold text-lg ml-7">{resumeData.basicInfo.連絡先}</p>
+                <p className="text-gray-900 font-bold text-xl ml-10 break-words">{resumeData.basicInfo.連絡先}</p>
               </div>
             </div>
           </motion.div>
 
           {/* 学歴カード */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gray-50 rounded-2xl p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-shadow"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-white rounded-2xl p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gray-200 flex items-center justify-center">
-                <span className="text-2xl">🎓</span>
+            <div className="flex items-center gap-3 mb-8 pb-4 border-b-2 border-gray-200">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center shadow-md">
+                <span className="text-3xl">🎓</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
                 学歴
@@ -90,12 +90,15 @@ const About = () => {
             </div>
             <div className="space-y-6">
               {resumeData.education.map((edu, index) => (
-                <div key={index} className={index < resumeData.education.length - 1 ? "pb-4 border-b border-gray-200" : ""}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">📅</span>
-                    <span className="text-gray-500 text-base font-medium">{edu.年月}</span>
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:bg-gray-100 transition-colors"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-2xl">📅</span>
+                    <span className="text-gray-600 text-base font-semibold">{edu.年月}</span>
                   </div>
-                  <p className="text-gray-800 font-semibold text-lg ml-7">{edu.学歴}</p>
+                  <p className="text-gray-900 font-bold text-xl ml-10">{edu.学歴}</p>
                 </div>
               ))}
             </div>
