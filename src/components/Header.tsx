@@ -56,24 +56,35 @@ const Header = ({ isScrolled }: HeaderProps) => {
 
         {/* Navigation Menu */}
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="mt-4 pb-4 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-lg"
-          >
-            {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all font-medium"
-                onClick={() => setIsMenuOpen(false)}
-                whileHover={{ x: 5 }}
-              >
-                {item.name}
-              </motion.a>
-            ))}
-          </motion.div>
+          <>
+            {/* 背景オーバーレイ */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            {/* メニュー */}
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="relative mt-4 pb-4 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-lg z-50"
+            >
+              {navItems.map((item) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                  whileHover={{ x: 5 }}
+                >
+                  {item.name}
+                </motion.a>
+              ))}
+            </motion.div>
+          </>
         )}
       </nav>
     </motion.header>
