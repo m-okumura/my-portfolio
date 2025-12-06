@@ -106,11 +106,38 @@ const Hero = () => {
             </div>
           </motion.div>
 
+          {/* CTAボタン */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75 }}
+          >
+            <motion.a
+              href="mailto:okumuram.gm@gmail.com"
+              className="px-8 py-4 bg-gray-800 text-white rounded-full font-semibold hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              お気軽にご連絡ください
+            </motion.a>
+            <motion.a
+              href="https://github.com/m-okumura"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-white text-gray-800 border-2 border-gray-800 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              GitHubを見る
+            </motion.a>
+          </motion.div>
+
           <motion.div
             className="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto space-y-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.75 }}
+            transition={{ delay: 0.8 }}
           >
             <p>🚀 Yahoo!向けSaaSを0から立ち上げ、10万ユーザー獲得</p>
             <p>💪 最大10名のチームマネジメント経験</p>
