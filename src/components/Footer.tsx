@@ -3,7 +3,7 @@ import { Mail } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className="relative py-12 border-t" style={{ backgroundColor: '#2c3e50', borderColor: '#34495e' }}>
+    <footer className="relative py-12 border-t scroll-fade-in" data-scroll-animate style={{ backgroundColor: '#2c3e50', borderColor: '#34495e' }}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -45,7 +45,7 @@ const Skills = () => {
   ]
 
   return (
-    <section id="skills" className="section-container relative bg-white">
+    <section id="skills" className="section-container relative bg-white scroll-fade-in" data-scroll-animate>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

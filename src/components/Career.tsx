@@ -119,7 +119,7 @@ const Career = () => {
   }, [resumeData])
 
   return (
-    <section id="career" className="section-container relative" style={{ backgroundColor: '#f0f8ff' }}>
+    <section id="career" className="section-container relative scroll-fade-in" data-scroll-animate style={{ backgroundColor: '#f0f8ff' }}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

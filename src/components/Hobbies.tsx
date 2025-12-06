@@ -44,7 +44,7 @@ const Hobbies = () => {
   ]
 
   return (
-    <section id="hobbies" className="section-container relative" style={{ backgroundColor: '#f0fff0' }}>
+    <section id="hobbies" className="section-container relative scroll-fade-in" data-scroll-animate style={{ backgroundColor: '#f0fff0' }}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

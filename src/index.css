@@ -80,6 +80,18 @@
     background-size: 200% 200%;
     animation: gradient 15s ease infinite;
   }
+
+  /* スクロールアニメーション用のクラス */
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-fade-in.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
