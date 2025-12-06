@@ -41,7 +41,7 @@ const Hero = () => {
           </motion.h1>
           
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -49,11 +49,72 @@ const Hero = () => {
             51歳、現役エンジニア兼プロダクトマネージャーです
           </motion.p>
 
+          {/* 数字で見る実績 - ファーストビュー */}
+          <motion.div
+            className="mb-8 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="border-t border-b border-gray-300 py-6">
+              <div className="grid grid-cols-3 gap-4 md:gap-8">
+                <motion.div
+                  className="text-center"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-1">
+                    20+
+                  </div>
+                  <div className="text-sm md:text-base text-gray-600 font-medium">
+                    年
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-500 mt-1">
+                    経験
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="text-center"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.65 }}
+                >
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-1">
+                    10万+
+                  </div>
+                  <div className="text-sm md:text-base text-gray-600 font-medium">
+                    ユーザー
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-500 mt-1">
+                    獲得
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="text-center"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.7 }}
+                >
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-1">
+                    99.5%
+                  </div>
+                  <div className="text-sm md:text-base text-gray-600 font-medium">
+                    稼働率
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-500 mt-1">
+                    維持
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.div
             className="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto space-y-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.75 }}
           >
             <p>🚀 Yahoo!向けSaaSを0から立ち上げ、10万ユーザー獲得</p>
             <p>💪 最大10名のチームマネジメント経験</p>
