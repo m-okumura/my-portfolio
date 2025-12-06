@@ -75,7 +75,6 @@ const Career = () => {
           '稼働率99.5%以上を維持',
           '総工数約40人月のプロジェクトを統括',
         ],
-        highlight: true,
       },
       {
         company: 'コマース21株式会社',
@@ -141,9 +140,7 @@ const Career = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`bg-gray-50 rounded-2xl p-8 border shadow-sm ${
-                career.highlight ? 'border-gray-400 border-2' : 'border-gray-300'
-              }`}
+              className="bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm"
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-gray-200 flex items-center justify-center flex-shrink-0">
