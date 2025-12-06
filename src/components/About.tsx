@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useMemo } from 'react'
 import { loadResume } from '../utils/loadResume'
-import { parseResume, ReactMarkdown, remarkGfm, rehypeRaw, markdownComponents } from '../utils/parseResume'
+import { parseResume, ReactMarkdown, remarkGfm, markdownComponents } from '../utils/parseResume'
 
 const About = () => {
   const resumeData = useMemo(() => {
@@ -91,7 +91,6 @@ const About = () => {
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
               components={markdownComponents}
             >
               {resumeData.motivation}
@@ -112,7 +111,6 @@ const About = () => {
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
               components={markdownComponents}
             >
               {resumeData.selfPR}

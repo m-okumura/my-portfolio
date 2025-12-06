@@ -186,13 +186,16 @@ export function parseResume(markdown: string): ResumeData {
 }
 
 // Markdownコンポーネント用の設定
-export const markdownComponents = {
+export const markdownComponents: any = {
   p: ({ children }: { children?: ReactNode }) => <p className="mb-3 text-gray-600 leading-relaxed">{children}</p>,
   h3: ({ children }: { children?: ReactNode }) => <h3 className="text-lg font-semibold text-gray-700 mb-3">{children}</h3>,
   h4: ({ children }: { children?: ReactNode }) => <h4 className="text-lg font-semibold text-gray-700 mb-3">{children}</h4>,
   strong: ({ children }: { children?: ReactNode }) => <strong className="text-gray-800 font-semibold">{children}</strong>,
+  em: ({ children }: { children?: ReactNode }) => <em className="text-gray-800">{children}</em>,
   ul: ({ children }: { children?: ReactNode }) => <ul className="list-disc list-inside space-y-2 text-gray-600">{children}</ul>,
   li: ({ children }: { children?: ReactNode }) => <li className="text-gray-600">{children}</li>,
+  // textコンポーネントを追加して、インライン要素を正しく処理
+  text: ({ children }: { children?: ReactNode }) => <>{children}</>,
 }
 
 export { ReactMarkdown, remarkGfm, rehypeRaw }
