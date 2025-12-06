@@ -38,12 +38,12 @@ const ScrollToTop = () => {
           exit={{ opacity: 0, scale: 0.5 }}
           transition={{ duration: 0.3 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-gray-800 hover:bg-gray-900 text-white border-none rounded-full w-12 h-12 md:w-14 md:h-14 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 bg-gray-800 hover:bg-gray-900 active:bg-gray-700 text-white border-none rounded-full w-14 h-14 sm:w-16 sm:h-16 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group touch-manipulation"
           aria-label="ページトップに戻る"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <ArrowUp className="w-6 h-6 md:w-7 md:h-7 group-hover:-translate-y-1 transition-transform duration-300" />
+          <ArrowUp className="w-7 h-7 sm:w-8 sm:h-8 group-hover:-translate-y-1 transition-transform duration-300" />
         </motion.button>
       )}
     </AnimatePresence>

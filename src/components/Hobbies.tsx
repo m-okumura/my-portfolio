@@ -117,31 +117,31 @@ const Hobbies = () => {
                         href="https://github.com/m-okumura/weather-app.git"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm link-underline"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 active:text-gray-700 transition-colors text-sm sm:text-base link-underline py-2 touch-manipulation min-h-[44px]"
                       >
-                        <ExternalLink className="w-4 h-4" />
+                        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                         <span>🌦️ 天気アプリ</span>
-                        <span className="text-gray-500 text-xs ml-2">→ TypeScript + React で作成</span>
+                        <span className="text-gray-500 text-xs sm:text-sm ml-2 hidden sm:inline">→ TypeScript + React で作成</span>
                       </a>
                       <a
                         href="https://github.com/m-okumura/my-portfolio.git"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm link-underline"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 active:text-gray-700 transition-colors text-sm sm:text-base link-underline py-2 touch-manipulation min-h-[44px]"
                       >
-                        <ExternalLink className="w-4 h-4" />
+                        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                         <span>📁 ポートフォリオ</span>
-                        <span className="text-gray-500 text-xs ml-2">→ このサイトのソースコード</span>
+                        <span className="text-gray-500 text-xs sm:text-sm ml-2 hidden sm:inline">→ このサイトのソースコード</span>
                       </a>
                       <a
                         href="https://github.com/m-okumura/reactstudy.git"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm link-underline"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 active:text-gray-700 transition-colors text-sm sm:text-base link-underline py-2 touch-manipulation min-h-[44px]"
                       >
-                        <ExternalLink className="w-4 h-4" />
+                        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                         <span>📚 React学習用</span>
-                        <span className="text-gray-500 text-xs ml-2">→ 学習の記録</span>
+                        <span className="text-gray-500 text-xs sm:text-sm ml-2 hidden sm:inline">→ 学習の記録</span>
                       </a>
                     </div>
                   </div>

@@ -62,7 +62,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
           <div className="flex items-center justify-end">
             {/* Hamburger Menu Button - Always Visible */}
             <motion.button
-              className="text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors relative z-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+              className="text-gray-600 p-3 rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors relative z-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 touch-manipulation"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="メニュー"
               aria-expanded={isMenuOpen}
@@ -71,7 +71,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
               whileTap={{ scale: 0.9 }}
             >
               <svg
-                className="w-6 h-6"
+                className="w-6 h-6 sm:w-7 sm:h-7"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -106,12 +106,13 @@ const Header = ({ isScrolled }: HeaderProps) => {
                   <motion.a
                     key={item.name}
                     href={item.href}
-                    className="flex items-center gap-3 py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all font-medium"
+                    className="flex items-center gap-3 py-4 px-4 text-gray-600 hover:text-gray-900 active:bg-gray-200 hover:bg-gray-100 rounded-full transition-all font-medium text-base touch-manipulation min-h-[44px]"
                     onClick={() => setIsMenuOpen(false)}
                     whileHover={{ x: 5 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    <IconComponent className="w-5 h-5 flex-shrink-0" />
-                    <span>{item.name}</span>
+                    <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                    <span className="text-base sm:text-lg">{item.name}</span>
                   </motion.a>
                 )
               })}

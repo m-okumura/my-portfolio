@@ -22,52 +22,52 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16 px-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
             プロフィール
           </h2>
           <div className="w-24 h-0.5 bg-gray-300 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {/* 基本情報カード */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <div className="flex items-center gap-3 mb-8 pb-4 border-b-2 border-gray-200">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center shadow-md">
-                <span className="text-3xl">👤</span>
+            <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 pb-3 sm:pb-4 border-b-2 border-gray-200">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center shadow-md">
+                <span className="text-2xl sm:text-3xl">👤</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
                 基本情報
               </h3>
             </div>
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:bg-gray-100 transition-colors">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-2xl">👤</span>
-                  <span className="text-gray-600 text-base font-semibold">氏名</span>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation">
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <span className="text-xl sm:text-2xl">👤</span>
+                  <span className="text-gray-600 text-sm sm:text-base font-semibold">氏名</span>
                 </div>
-                <p className="text-gray-900 font-bold text-xl ml-10">{resumeData.basicInfo.氏名}</p>
+                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10">{resumeData.basicInfo.氏名}</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:bg-gray-100 transition-colors">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-2xl">📅</span>
-                  <span className="text-gray-600 text-base font-semibold">生年月日</span>
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation">
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <span className="text-xl sm:text-2xl">📅</span>
+                  <span className="text-gray-600 text-sm sm:text-base font-semibold">生年月日</span>
                 </div>
-                <p className="text-gray-900 font-bold text-xl ml-10">{resumeData.basicInfo.生年月日}</p>
+                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10">{resumeData.basicInfo.生年月日}</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:bg-gray-100 transition-colors">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-2xl">📧</span>
-                  <span className="text-gray-600 text-base font-semibold">連絡先</span>
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation">
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <span className="text-xl sm:text-2xl">📧</span>
+                  <span className="text-gray-600 text-sm sm:text-base font-semibold">連絡先</span>
                 </div>
-                <p className="text-gray-900 font-bold text-xl ml-10 break-words">{resumeData.basicInfo.連絡先}</p>
+                <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10 break-words">{resumeData.basicInfo.連絡先}</p>
               </div>
             </div>
           </motion.div>
@@ -78,27 +78,27 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white rounded-2xl p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <div className="flex items-center gap-3 mb-8 pb-4 border-b-2 border-gray-200">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center shadow-md">
-                <span className="text-3xl">🎓</span>
+            <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 pb-3 sm:pb-4 border-b-2 border-gray-200">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center shadow-md">
+                <span className="text-2xl sm:text-3xl">🎓</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
                 学歴
               </h3>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {resumeData.education.map((edu, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:bg-gray-100 transition-colors"
+                  className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors touch-manipulation"
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-2xl">📅</span>
-                    <span className="text-gray-600 text-base font-semibold">{edu.年月}</span>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <span className="text-xl sm:text-2xl">📅</span>
+                    <span className="text-gray-600 text-sm sm:text-base font-semibold">{edu.年月}</span>
                   </div>
-                  <p className="text-gray-900 font-bold text-xl ml-10">{edu.学歴}</p>
+                  <p className="text-gray-900 font-bold text-lg sm:text-xl ml-8 sm:ml-10">{edu.学歴}</p>
                 </div>
               ))}
             </div>

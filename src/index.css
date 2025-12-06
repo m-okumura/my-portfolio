@@ -7,6 +7,8 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
     max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
   
   body {
@@ -14,6 +16,17 @@
     background-attachment: fixed;
     overflow-x: hidden;
     max-width: 100vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* タッチ操作の最適化 */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button, a {
+    touch-action: manipulation;
   }
   
   /* スキップリンク（アクセシビリティ） */

@@ -118,7 +118,7 @@ const Hero = () => {
           >
             <motion.a
               href="mailto:okumuram.gm@gmail.com"
-              className="px-8 py-4 bg-gray-800 text-white rounded-full font-semibold hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+              className="px-6 py-4 sm:px-8 sm:py-4 bg-gray-800 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-gray-900 active:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 touch-manipulation min-h-[44px] flex items-center justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -128,7 +128,7 @@ const Hero = () => {
               href="https://github.com/m-okumura"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-white text-gray-800 border-2 border-gray-800 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+              className="px-6 py-4 sm:px-8 sm:py-4 bg-white text-gray-800 border-2 border-gray-800 rounded-full font-semibold text-sm sm:text-base hover:bg-gray-50 active:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 touch-manipulation min-h-[44px] flex items-center justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -137,15 +137,15 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            className="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto space-y-2"
+            className="text-sm sm:text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto space-y-2 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <p>🚀 Yahoo!向けSaaSを0から立ち上げ、10万ユーザー獲得</p>
-            <p>💪 最大10名のチームマネジメント経験</p>
-            <p>🎯 ECサイト・SaaS開発で20年以上の実績</p>
-            <p>🏃 週末は登山とコーディングを楽しむアクティブ派</p>
+            <p className="leading-relaxed">🚀 Yahoo!向けSaaSを0から立ち上げ、10万ユーザー獲得</p>
+            <p className="leading-relaxed">💪 最大10名のチームマネジメント経験</p>
+            <p className="leading-relaxed">🎯 ECサイト・SaaS開発で20年以上の実績</p>
+            <p className="leading-relaxed">🏃 週末は登山とコーディングを楽しむアクティブ派</p>
           </motion.div>
         </motion.div>
       </div>
