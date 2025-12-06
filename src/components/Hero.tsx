@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { ArrowDown } from 'lucide-react'
 import profilePhoto from '../assets/okumuram.jpeg'
 
 const Hero = () => {
@@ -120,22 +119,6 @@ const Hero = () => {
             <p>💪 最大10名のチームマネジメント経験</p>
             <p>🎯 ECサイト・SaaS開発で20年以上の実績</p>
             <p>🏃 週末は登山とコーディングを楽しむアクティブ派</p>
-          </motion.div>
-
-          <motion.div
-            className="mt-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            <a href="#about" className="inline-block group">
-              <motion.div
-                className="w-12 h-12 rounded-full bg-gray-200 border border-gray-400 flex items-center justify-center group-hover:border-gray-500 transition-all shadow-sm"
-                whileHover={{ scale: 1.1 }}
-              >
-                <ArrowDown className="w-5 h-5 text-gray-600 animate-bounce" />
-              </motion.div>
-            </a>
           </motion.div>
         </motion.div>
       </div>
