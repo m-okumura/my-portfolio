@@ -58,6 +58,13 @@ const Career = () => {
     // 既存の詳細情報を追加（手動で設定）
     const detailedCareers = [
       {
+        company: 'キャル株式会社',
+        period: '2025年10月～',
+        role: '',
+        description: 'いろいろやる予定',
+        achievements: [],
+      },
+      {
         company: 'FID株式会社',
         period: '2023年10月～2023年12月',
         role: 'システム開発部',
