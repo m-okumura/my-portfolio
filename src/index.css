@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth を削除（iOSでスクロールを不安定にする可能性があるため） */
     overflow-x: hidden;
     max-width: 100vw;
     -webkit-text-size-adjust: 100%;
@@ -17,12 +17,15 @@
     @apply bg-gray-100 text-gray-900;
     /* background-attachment: fixed を削除（iOSでスクロールをブロックするため） */
     overflow-x: hidden;
+    overflow-y: auto;
     max-width: 100vw;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* iOSでのスクロール問題を防ぐ */
     -webkit-overflow-scrolling: touch;
     position: relative;
+    /* iOSでのスクロールを確実にする */
+    overscroll-behavior-y: contain;
   }
 
   /* タッチ操作の最適化 */
@@ -30,8 +33,18 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  button, a {
+  /* touch-actionはボタンとリンクのみに限定（スクロール可能な要素には適用しない） */
+  button:not([type="button"]):not([type="submit"]):not([type="reset"]),
+  button[type="button"],
+  button[type="submit"],
+  button[type="reset"],
+  a[href] {
     touch-action: manipulation;
+  }
+
+  /* スクロール可能な要素にはtouch-actionを適用しない */
+  main, section, div[class*="scroll"] {
+    touch-action: pan-y;
   }
   
   /* スキップリンク（アクセシビリティ） */

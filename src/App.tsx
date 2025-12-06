@@ -40,9 +40,9 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen overflow-x-hidden max-w-full">
+    <div className="min-h-screen overflow-x-hidden max-w-full" style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
       <Header isScrolled={isScrolled} />
-      <main className="overflow-x-hidden max-w-full">
+      <main className="overflow-x-hidden max-w-full" style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
         <Hero />
         <About />
         <Skills />

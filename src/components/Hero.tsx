@@ -3,7 +3,7 @@ import profilePhoto from '../assets/okumuram.jpeg'
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-x-hidden bg-white" style={{ WebkitOverflowScrolling: 'touch' }}>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-x-hidden bg-white" style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
 
       <div className="section-container text-center relative z-10">
         <motion.div

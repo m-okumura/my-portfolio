@@ -23,10 +23,17 @@ const ScrollToTop = () => {
   }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
+    // iOSでのスクロール問題を避けるため、behavior: 'smooth'を使わずにrequestAnimationFrameを使用
+    const scrollToTopSmooth = () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(scrollToTopSmooth)
+        window.scrollTo(0, currentScroll - currentScroll / 8)
+      } else {
+        window.scrollTo(0, 0)
+      }
+    }
+    scrollToTopSmooth()
   }
 
   return (
