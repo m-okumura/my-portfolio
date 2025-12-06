@@ -9,15 +9,28 @@
     max-width: 100vw;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    /* iOSでのスクロール問題を防ぐ */
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
   }
   
   body {
     @apply bg-gray-100 text-gray-900;
-    background-attachment: fixed;
+    /* background-attachment: fixed を削除（iOSでスクロールをブロックするため） */
     overflow-x: hidden;
     max-width: 100vw;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* iOSでのスクロール問題を防ぐ */
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root {
+    min-height: 100vh;
+    position: relative;
   }
 
   /* タッチ操作の最適化 */
