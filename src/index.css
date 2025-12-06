@@ -11,7 +11,6 @@
     -webkit-tap-highlight-color: transparent;
     /* iOSでのスクロール問題を防ぐ */
     -webkit-overflow-scrolling: touch;
-    height: 100%;
   }
   
   body {
@@ -22,14 +21,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* iOSでのスクロール問題を防ぐ */
-    position: relative;
-    min-height: 100vh;
-    height: auto;
     -webkit-overflow-scrolling: touch;
-  }
-
-  #root {
-    min-height: 100vh;
     position: relative;
   }
 
