@@ -78,11 +78,98 @@ const About = () => {
           </motion.div>
         </div>
 
+        {/* 数字で見る実績 */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm"
+        >
+          <h3 className="text-2xl font-bold mb-6 text-gray-800">
+            📊 数字で見る実績
+          </h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-gray-300">
+                  <th className="py-3 px-4 font-semibold text-gray-800">項目</th>
+                  <th className="py-3 px-4 font-semibold text-gray-800">実績</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-200">
+                  <td className="py-3 px-4 text-gray-700 font-medium">キャリア</td>
+                  <td className="py-3 px-4 text-gray-600">20年以上</td>
+                </tr>
+                <tr className="border-b border-gray-200">
+                  <td className="py-3 px-4 text-gray-700 font-medium">プロダクト立ち上げ</td>
+                  <td className="py-3 px-4 text-gray-600">Yahoo!向けSaaS（10万ユーザー）</td>
+                </tr>
+                <tr className="border-b border-gray-200">
+                  <td className="py-3 px-4 text-gray-700 font-medium">プロジェクト規模</td>
+                  <td className="py-3 px-4 text-gray-600">最大1.5億円</td>
+                </tr>
+                <tr className="border-b border-gray-200">
+                  <td className="py-3 px-4 text-gray-700 font-medium">マネジメント経験</td>
+                  <td className="py-3 px-4 text-gray-600">最大10名</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 text-gray-700 font-medium">稼働率</td>
+                  <td className="py-3 px-4 text-gray-600">99.5%以上を維持</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
+
+        {/* 主なプロジェクト */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm"
+        >
+          <h3 className="text-2xl font-bold mb-6 text-gray-800">
+            💼 主なプロジェクト
+          </h3>
+          <div className="space-y-4">
+            <div>
+              <h4 className="text-xl font-semibold mb-3 text-gray-800">
+                🎯 Yahoo!にぎわいサービス（2016-2023）
+              </h4>
+              <div className="space-y-3 text-gray-600">
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Challenge</p>
+                  <p>Yahoo!ショッピング出店者の集客支援SaaSを0から立ち上げ</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Solution</p>
+                  <ul className="list-disc list-inside space-y-1 ml-2">
+                    <li>6ヶ月でMVPリリース</li>
+                    <li>4名のチームをリード</li>
+                    <li>マルチテナント設計で安定稼働</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Result</p>
+                  <ul className="space-y-1">
+                    <li>✅ 10万ユーザー獲得</li>
+                    <li>✅ Yahoo!出店者の30%が利用</li>
+                    <li>✅ 稼働率99.5%以上を維持</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.25 }}
           className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm"
         >
           <h3 className="text-2xl font-bold mb-6 text-gray-800">

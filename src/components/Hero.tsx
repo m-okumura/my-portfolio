@@ -41,29 +41,25 @@ const Hero = () => {
           </motion.h1>
           
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            ECサイト構築・運用、業務システム開発において
-            <br className="hidden md:block" />
-            <span className="text-gray-700 font-medium">20年以上の実績</span>
-            を持つITプロフェッショナルです
+            51歳、現役エンジニア兼プロダクトマネージャーです
           </motion.p>
 
-          <motion.p
-            className="text-base md:text-lg text-gray-500 mb-12 max-w-xl mx-auto"
+          <motion.div
+            className="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto space-y-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.5 }}
           >
-            Yahoo!向けSaaSプロダクトの0→1立ち上げからグロース、
-            <br className="hidden md:block" />
-            大手ファッションブランドのECサイト構築など、
-            <br className="hidden md:block" />
-            ビジネス成果にコミットしたシステム開発を推進してきました
-          </motion.p>
+            <p>🚀 Yahoo!向けSaaSを0から立ち上げ、10万ユーザー獲得</p>
+            <p>💪 最大10名のチームマネジメント経験</p>
+            <p>🎯 ECサイト・SaaS開発で20年以上の実績</p>
+            <p>🏃 週末は登山とコーディングを楽しむアクティブ派</p>
+          </motion.div>
 
           <motion.div
             className="mt-16"
