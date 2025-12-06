@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Home, User, Code, Briefcase, Heart } from 'lucide-react'
 
@@ -17,8 +17,27 @@ const Header = ({ isScrolled }: HeaderProps) => {
     { name: '趣味', href: '#hobbies', icon: Heart },
   ]
 
+  // ESCキーでメニューを閉じる
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [isMenuOpen])
+
   return (
     <>
+      {/* スキップリンク（アクセシビリティ） */}
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gray-800 focus:text-white focus:rounded-lg focus:shadow-lg"
+      >
+        メインコンテンツへスキップ
+      </a>
+      
       {/* 背景オーバーレイ */}
       {isMenuOpen && (
         <motion.div
@@ -27,6 +46,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
           onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
         />
       )}
       <motion.header
@@ -42,9 +62,11 @@ const Header = ({ isScrolled }: HeaderProps) => {
           <div className="flex items-center justify-end">
             {/* Hamburger Menu Button - Always Visible */}
             <motion.button
-              className="text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors relative z-50"
+              className="text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors relative z-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="メニュー"
+              aria-expanded={isMenuOpen}
+              aria-controls="navigation-menu"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -68,12 +90,15 @@ const Header = ({ isScrolled }: HeaderProps) => {
 
           {/* Navigation Menu */}
           {isMenuOpen && (
-            <motion.div
+            <motion.nav
+              id="navigation-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               className="relative mt-4 pb-4 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-lg z-50"
               onClick={(e) => e.stopPropagation()}
+              role="navigation"
+              aria-label="メインナビゲーション"
             >
               {navItems.map((item) => {
                 const IconComponent = item.icon
@@ -90,7 +115,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
                   </motion.a>
                 )
               })}
-            </motion.div>
+            </motion.nav>
           )}
         </nav>
       </motion.header>

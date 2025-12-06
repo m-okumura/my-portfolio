@@ -23,6 +23,9 @@ const Hero = () => {
                 src={profilePhoto}
                 alt="奧村 宗久"
                 className="w-full h-full object-cover"
+                loading="eager"
+                width="200"
+                height="200"
               />
             </div>
           </motion.div>

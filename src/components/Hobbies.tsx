@@ -95,6 +95,7 @@ const Hobbies = () => {
                             src={img}
                             alt={`${hobby.title}の写真${imgIndex + 1}`}
                             className="w-full h-auto max-h-64 sm:max-h-80 object-contain hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
                           />
                         </motion.div>
                       ))}
