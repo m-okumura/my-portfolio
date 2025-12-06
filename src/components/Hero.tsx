@@ -18,7 +18,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <div className="w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] rounded-full overflow-hidden border-4 border-gray-400 shadow-xl bg-gray-50">
+            <div className="w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] rounded-full overflow-hidden border-4 border-gray-400 shadow-xl bg-gray-50 cursor-pointer transition-transform duration-300 hover:scale-110">
               <img
                 src={profilePhoto}
                 alt="奧村 宗久"
