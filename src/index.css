@@ -65,6 +65,46 @@
   .gradient-text {
     @apply bg-gradient-to-r from-gray-700 to-gray-800 bg-clip-text text-transparent;
   }
+
+  /* プロジェクトカードのホバーエフェクト */
+  .project-card {
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 趣味の写真のホバーエフェクト */
+  .hobby-image {
+    transition: transform 0.3s ease;
+  }
+
+  .hobby-image:hover {
+    transform: scale(1.1);
+  }
+
+  /* リンクのアンダーラインアニメーション */
+  .link-underline {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  .link-underline:hover::after {
+    width: 100%;
+  }
 }
 
 @layer utilities {

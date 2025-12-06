@@ -220,7 +220,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm"
+          className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm project-card"
         >
           <h3 className="text-2xl font-bold mb-6 text-gray-800">
             💼 主なプロジェクト

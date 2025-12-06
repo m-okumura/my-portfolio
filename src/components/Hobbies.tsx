@@ -94,7 +94,7 @@ const Hobbies = () => {
                           <img
                             src={img}
                             alt={`${hobby.title}の写真${imgIndex + 1}`}
-                            className="w-full h-auto max-h-64 sm:max-h-80 object-contain hover:scale-105 transition-transform duration-300"
+                            className="w-full h-auto max-h-64 sm:max-h-80 object-contain hobby-image"
                             loading="lazy"
                           />
                         </motion.div>
@@ -117,7 +117,7 @@ const Hobbies = () => {
                         href="https://github.com/m-okumura/weather-app.git"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm link-underline"
                       >
                         <ExternalLink className="w-4 h-4" />
                         <span>🌦️ 天気アプリ</span>
@@ -127,7 +127,7 @@ const Hobbies = () => {
                         href="https://github.com/m-okumura/my-portfolio.git"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm link-underline"
                       >
                         <ExternalLink className="w-4 h-4" />
                         <span>📁 ポートフォリオ</span>
@@ -137,7 +137,7 @@ const Hobbies = () => {
                         href="https://github.com/m-okumura/reactstudy.git"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm link-underline"
                       >
                         <ExternalLink className="w-4 h-4" />
                         <span>📚 React学習用</span>
