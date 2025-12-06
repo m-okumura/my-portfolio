@@ -74,11 +74,11 @@ export function parseResume(markdown: string): ResumeData {
     } else if (line.trim().startsWith('## 【保有資格】')) {
       currentSection = 'qualifications'
       continue
-    } else if (line.trim().startsWith('## 【志望動機】')) {
+    } else if (line.trim().startsWith('## 【今までやってきたこと】')) {
       currentSection = 'motivation'
       motivationLines = []
       continue
-    } else if (line.trim().startsWith('## 【自己PR・今後やっていきたいこと】')) {
+    } else if (line.trim().startsWith('## 【自己PR・今後やっていきたいこと】') || line.trim().startsWith('## 【今後やっていきたいこと】')) {
       currentSection = 'selfPR'
       selfPRLines = []
       continue

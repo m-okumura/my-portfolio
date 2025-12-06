@@ -86,7 +86,7 @@ const About = () => {
           className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm"
         >
           <h3 className="text-2xl font-bold mb-6 text-gray-800">
-            志望動機
+            今までやってきたこと
           </h3>
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <ReactMarkdown
@@ -106,7 +106,7 @@ const About = () => {
           className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm"
         >
           <h3 className="text-2xl font-bold mb-6 text-gray-800">
-            自己PR・今後やっていきたいこと
+            今後やっていきたいこと
           </h3>
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <ReactMarkdown
