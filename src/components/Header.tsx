@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Home, User, Code, Briefcase, Heart } from 'lucide-react'
 
 interface HeaderProps {
   isScrolled: boolean
@@ -9,11 +10,11 @@ const Header = ({ isScrolled }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { name: 'ホーム', href: '#home' },
-    { name: 'プロフィール', href: '#about' },
-    { name: 'スキル', href: '#skills' },
-    { name: '職歴', href: '#career' },
-    { name: '趣味', href: '#hobbies' },
+    { name: 'ホーム', href: '#home', icon: Home },
+    { name: 'プロフィール', href: '#about', icon: User },
+    { name: 'スキル', href: '#skills', icon: Code },
+    { name: '職歴', href: '#career', icon: Briefcase },
+    { name: '趣味', href: '#hobbies', icon: Heart },
   ]
 
   return (
@@ -74,17 +75,21 @@ const Header = ({ isScrolled }: HeaderProps) => {
               className="relative mt-4 pb-4 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-lg z-50"
               onClick={(e) => e.stopPropagation()}
             >
-              {navItems.map((item) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                  whileHover={{ x: 5 }}
-                >
-                  {item.name}
-                </motion.a>
-              ))}
+              {navItems.map((item) => {
+                const IconComponent = item.icon
+                return (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center gap-3 py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                    whileHover={{ x: 5 }}
+                  >
+                    <IconComponent className="w-5 h-5 flex-shrink-0" />
+                    <span>{item.name}</span>
+                  </motion.a>
+                )
+              })}
             </motion.div>
           )}
         </nav>
