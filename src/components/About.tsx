@@ -108,42 +108,106 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm"
+          className="mt-12 bg-gray-50 rounded-2xl p-8 border-2 border-gray-300 shadow-lg"
         >
-          <h3 className="text-2xl font-bold mb-6 text-gray-800">
+          <h3 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800 text-center">
             📊 数字で見る実績
           </h3>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="border-b border-gray-300">
-                  <th className="py-3 px-4 font-semibold text-gray-800">項目</th>
-                  <th className="py-3 px-4 font-semibold text-gray-800">実績</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-gray-200">
-                  <td className="py-3 px-4 text-gray-700 font-medium">キャリア</td>
-                  <td className="py-3 px-4 text-gray-600">20年以上</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-3 px-4 text-gray-700 font-medium">プロダクト立ち上げ</td>
-                  <td className="py-3 px-4 text-gray-600">Yahoo!向けSaaS（10万ユーザー）</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-3 px-4 text-gray-700 font-medium">プロジェクト規模</td>
-                  <td className="py-3 px-4 text-gray-600">最大1.5億円</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-3 px-4 text-gray-700 font-medium">マネジメント経験</td>
-                  <td className="py-3 px-4 text-gray-600">最大10名</td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-4 text-gray-700 font-medium">稼働率</td>
-                  <td className="py-3 px-4 text-gray-600">99.5%以上を維持</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {/* キャリア */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="text-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
+                20+
+              </div>
+              <div className="text-xs md:text-sm text-gray-500 font-medium">
+                年
+              </div>
+              <div className="text-base md:text-lg text-gray-700 font-semibold mt-2">
+                キャリア
+              </div>
+            </motion.div>
+
+            {/* ユーザー */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.25 }}
+              className="text-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
+                10万+
+              </div>
+              <div className="text-xs md:text-sm text-gray-500 font-medium">
+                ユーザー
+              </div>
+              <div className="text-base md:text-lg text-gray-700 font-semibold mt-2">
+                プロダクト立ち上げ
+              </div>
+            </motion.div>
+
+            {/* プロジェクト規模 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="text-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
+                1.5億円
+              </div>
+              <div className="text-xs md:text-sm text-gray-500 font-medium">
+                最大規模
+              </div>
+              <div className="text-base md:text-lg text-gray-700 font-semibold mt-2">
+                プロジェクト規模
+              </div>
+            </motion.div>
+
+            {/* マネジメント */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.35 }}
+              className="text-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
+                10名
+              </div>
+              <div className="text-xs md:text-sm text-gray-500 font-medium">
+                最大
+              </div>
+              <div className="text-base md:text-lg text-gray-700 font-semibold mt-2">
+                マネジメント経験
+              </div>
+            </motion.div>
+
+            {/* 稼働率 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="text-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow col-span-2 md:col-span-1"
+            >
+              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
+                99.5%
+              </div>
+              <div className="text-xs md:text-sm text-gray-500 font-medium">
+                以上を維持
+              </div>
+              <div className="text-base md:text-lg text-gray-700 font-semibold mt-2">
+                稼働率
+              </div>
+            </motion.div>
           </div>
         </motion.div>
 
