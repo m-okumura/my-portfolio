@@ -58,13 +58,6 @@ const Career = () => {
     // 既存の詳細情報を追加（手動で設定）
     const detailedCareers = [
       {
-        company: '転職活動中',
-        period: '2025年9月～',
-        role: '転職活動を再開',
-        description: '家族介護のため休職していた期間を経て、転職活動を再開',
-        achievements: [],
-      },
-      {
         company: 'FID株式会社',
         period: '2023年10月～2023年12月',
         role: 'システム開発部',
