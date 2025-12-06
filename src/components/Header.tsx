@@ -27,34 +27,10 @@ const Header = ({ isScrolled }: HeaderProps) => {
       }`}
     >
       <nav className="section-container py-4">
-        <div className="flex items-center justify-between">
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 ml-auto">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="relative text-gray-600 hover:text-gray-900 transition-colors font-medium px-4 py-2 rounded-full hover:bg-gray-100"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item.name}
-                <motion.span
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-400"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
+        <div className="flex items-center justify-end">
+          {/* Hamburger Menu Button - Always Visible */}
           <motion.button
-            className="md:hidden text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors"
+            className="text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="メニュー"
             whileHover={{ scale: 1.1 }}
@@ -78,13 +54,13 @@ const Header = ({ isScrolled }: HeaderProps) => {
           </motion.button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Navigation Menu */}
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-lg"
+            className="mt-4 pb-4 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-lg"
           >
             {navItems.map((item) => (
               <motion.a

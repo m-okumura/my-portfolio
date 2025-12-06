@@ -19,9 +19,9 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden max-w-full">
       <Header isScrolled={isScrolled} />
-      <main>
+      <main className="overflow-x-hidden max-w-full">
         <Hero />
         <About />
         <Skills />

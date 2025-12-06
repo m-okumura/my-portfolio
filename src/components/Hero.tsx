@@ -4,19 +4,19 @@ import profilePhoto from '../assets/okumuram.jpeg'
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-x-hidden">
       {/* Subtle Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(107,114,128,0.08),transparent_50%)]"></div>
 
       {/* Profile Photo - Top Right */}
       <motion.div
-        className="absolute top-8 right-8 md:top-16 md:right-16 z-20"
+        className="absolute top-8 right-4 md:top-16 md:right-8 lg:right-16 z-20"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
       >
-        <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-gray-400 shadow-lg bg-gray-50">
+        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-4 border-gray-400 shadow-lg bg-gray-50 max-w-[calc(100vw-2rem)]">
           <img
             src={profilePhoto}
             alt="奧村 宗久"

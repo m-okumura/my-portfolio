@@ -80,12 +80,12 @@ const Hobbies = () => {
                 className="bg-gray-50 rounded-2xl p-8 border border-gray-300 shadow-sm hover:border-gray-400 transition-all duration-300"
               >
                 {hobby.images && hobby.images.length > 0 && (
-                  <div className="mb-4">
-                    <div className={`grid gap-3 ${hobby.images.length === 1 ? 'grid-cols-1 justify-items-center' : 'grid-cols-2'}`}>
+                  <div className="mb-4 w-full">
+                    <div className={`grid gap-3 ${hobby.images.length === 1 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
                       {hobby.images.map((img, imgIndex) => (
                         <motion.div
                           key={imgIndex}
-                          className={`rounded-lg overflow-hidden border border-gray-300 shadow-sm bg-gray-100 flex items-center justify-center ${hobby.images.length === 1 ? 'max-w-xs w-full' : 'w-full'}`}
+                          className="rounded-lg overflow-hidden border border-gray-300 shadow-sm bg-gray-100 flex items-center justify-center w-full"
                           initial={{ opacity: 0, scale: 0.9 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
@@ -94,7 +94,7 @@ const Hobbies = () => {
                           <img
                             src={img}
                             alt={`${hobby.title}の写真${imgIndex + 1}`}
-                            className={`${hobby.images.length === 1 ? 'w-full max-w-xs' : 'w-full'} h-auto max-h-64 object-contain hover:scale-105 transition-transform duration-300`}
+                            className="w-full h-auto max-h-64 sm:max-h-80 object-contain hover:scale-105 transition-transform duration-300"
                           />
                         </motion.div>
                       ))}
